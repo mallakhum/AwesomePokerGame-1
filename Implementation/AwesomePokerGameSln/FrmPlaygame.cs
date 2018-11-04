@@ -29,7 +29,22 @@ namespace AwesomePokerGameSln {
         dealerCardPics[c - 1] = this.Controls.Find("pictureBox" + c.ToString(), true)[0] as PictureBox;
       }
     }
+    
+    int bal = 500;
+    int wins = 0;
+    int bet = 50;
+    private void checkWin(HandType x, HandType y)
+        {
+            if (radioButton1.Checked) { bet = 10; }
+            if (radioButton2.Checked) { bet = 50; }
 
+            if (x > y) { handwinloss.Text = "Dealer Wins"; bal = bal - bet; }
+            if (x < y) { handwinloss.Text = " Player Wins"; wins++; bal = bal + bet; }
+            if (x == y) { handwinloss.Text = "Draw"; }
+            wallet.Text = "Wallet: $" + bal;
+            handswon.Text = "Hands won:" + wins.ToString();
+            currBet.Text = "Bet: $" + bet;
+        }
     private void dealCards() {
       deck.shuffleDeck();
       Tuple<int, int>[] cards = new Tuple<int, int>[5];
@@ -51,6 +66,8 @@ namespace AwesomePokerGameSln {
       }
       playerHand = new Hand(cards);
       lblHandType.Text = playerHand.getHandType().ToString();
+      Dlhandtype.Text = "D : " + dealerHand.getHandType().ToString();
+      checkWin(playerHand.getHandType(), dealerHand.getHandType());
     }
 
     private void FrmPlaygame_FormClosed(object sender, FormClosedEventArgs e) {
