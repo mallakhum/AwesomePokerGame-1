@@ -1,4 +1,4 @@
-﻿using AwesomePokerGameSln.Code;
+using AwesomePokerGameSln.Code;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +46,7 @@ namespace AwesomePokerGameSln {
             handswon.Text = "Hands won:" + wins.ToString();
             currBet.Text = "Bet: $" + bet;
         }
+    
     private void dealCards() {
       deck.shuffleDeck();
       Tuple<int, int>[] cards = new Tuple<int, int>[5];
