@@ -68,3 +68,5 @@ namespace AwesomePokerGameSln {
     }
   }
 }
+
+int test = 0;
