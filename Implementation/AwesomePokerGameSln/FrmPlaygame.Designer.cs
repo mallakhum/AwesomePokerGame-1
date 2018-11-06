@@ -42,6 +42,7 @@ namespace AwesomePokerGameSln {
             this.currBet = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.picCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCard3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCard4)).BeginInit();
@@ -255,6 +256,7 @@ namespace AwesomePokerGameSln {
             this.ClientSize = new System.Drawing.Size(1122, 507);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.currBet);
             this.Controls.Add(this.handswon);
             this.Controls.Add(this.wallet);
@@ -312,5 +314,6 @@ namespace AwesomePokerGameSln {
         private System.Windows.Forms.Label currBet;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
     }
 }
