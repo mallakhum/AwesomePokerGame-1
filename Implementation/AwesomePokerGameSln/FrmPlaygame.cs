@@ -37,7 +37,7 @@ namespace AwesomePokerGameSln {
         {
             if (radioButton1.Checked) { bet = 10; }
             if (radioButton2.Checked) { bet = 50; }
-            if (radioButton3.Checked) { bal = bal - 5; }
+            if (radioButton3.Checked) { bal = bal; }
 
             if (x > y) { handwinloss.Text = "Dealer Wins"; bal = bal - bet; }
             if (x < y) { handwinloss.Text = " Player Wins"; wins++; bal = bal + bet; }
