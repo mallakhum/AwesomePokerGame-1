@@ -1,4 +1,4 @@
-﻿using AwesomePokerGameSln.Code;
+using AwesomePokerGameSln.Code;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 using CardType = System.Tuple<int, int>;
 
 namespace AwesomePokerGameSln {
@@ -46,6 +47,7 @@ namespace AwesomePokerGameSln {
             handswon.Text = "Hands won:" + wins.ToString();
             currBet.Text = "Bet: $" + bet;
         }
+    
     private void dealCards() {
       deck.shuffleDeck();
       Tuple<int, int>[] cards = new Tuple<int, int>[5];
@@ -83,6 +85,15 @@ namespace AwesomePokerGameSln {
 
     private void button1_Click(object sender, EventArgs e) {
       dealCards();
+    }
+    
+    // function to employ sound, when the player wins
+    private void button1_Click(object sender, EventArgs e){
+      dealCards();
+      if (playerHand.getHandtype() < dealerHand.getHandType()){
+        SoundPlayer audio = new SoundPlayer(AwesomePokerGameSln.Properties.Resources.play1);
+        audio.Play();
+      }
     }
   }
 }
